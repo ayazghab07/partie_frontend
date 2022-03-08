@@ -1,0 +1,34 @@
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <form (ngSubmit)='onSubmit(f)' #f="ngForm" class="modal-content" >
+    <div class="container">
+      <h1>s'inscrire</h1>
+      <p>Veuillez remplir ce formulaire pour créer un compte.</p>
+      <hr>
+      <label for="w3-text"><b>Prénom</b></label>
+      <input type="text" placeholder="Enter Prénom"  [(ngModel)]="nouvparieur.prenom" name="Prénom" required>
+      <label for="w3-text"><b>Prénom</b></label>
+      <input type="text" placeholder="Enter Nom"[(ngModel)]="nouvparieur.nom" name="Nom" required>
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" [(ngModel)]="nouvparieur.email" name="email" required>
+      <label for="psw"><b>Mot passe</b></label>
+      <input type="password" placeholder="Enter Mot passe"[(ngModel)]="nouvparieur.password" name="psw" required>
+
+      <label for="psw-repeat"><b>Confirmer Mot Passe</b></label>
+      <input type="password" placeholder="Confirmer Mot Passe" [(ngModel)]="nouvparieur.password" name="psw-repeat" required>
+      
+      <label>
+        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Valider Mot Passe
+      </label>
+
+      <p>En créant un compte, vous acceptez nos <a href="#" style="color:dodgerblue">Conditions & confidentialité</a>.</p>
+
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Annuler</button>
+        <button type="submit" class="signupbtn">S'inscrire</button>
+      </div>
+    </div>
+  </form>
