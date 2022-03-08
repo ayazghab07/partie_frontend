@@ -3,7 +3,7 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Parieur } from 'src/model/parieur';
 import { ParieurserService } from 'src/services/parieurser.service';
-
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-ajouter',
   templateUrl: './ajouter.component.html',
@@ -11,21 +11,26 @@ import { ParieurserService } from 'src/services/parieurser.service';
 })
 export class AjouterComponent implements OnInit {
   nouvparieur=new Parieur();
-
-  constructor(private serviceparieur:ParieurserService,
-    private route:Router) { }
-
-  ngOnInit(): void {
-  }
-  onSubmit(form: NgForm){
-    this.serviceparieur.addParieur(this.nouvparieur).subscribe(data=>{
-      
+  
+  message: string | undefined;
+   constructor(private httpClient:HttpClient,private ParieurserService: ParieurserService,private router:Router) { }
+   confirmationString:String ="New admin has been added";  
+    isAdded:boolean=false;
+   ngOnInit(): void {
+   }
+  
+       onSubmit(f: NgForm) {
+         
+         console.log(this.nouvparieur);
  
-      this.route.navigate(['/listeParieurs']);
-     
-    })
+     this.ParieurserService.addParieur(this.nouvparieur);  
+    // document.write("l admin est ajouté"); 
+    
+    window.alert("L admin est ajouté !");
+ this.router.navigate(['parieurs']);
+    isAdded:true;
  
-   
-  }
-
+        
+        }
+       
 }

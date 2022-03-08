@@ -7,22 +7,23 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ParieurserService {
-  host="http://127.0.0.1:8091"
+  nouvParieur:any=new Parieur();
+  host="http://127.0.0.1:8033"
 
   constructor(private http: HttpClient) { }
 
-  public getParieur(){
-    return this.http.get(this.host+"/par");
-  }
+  
+  
 
-
-  public addParieur(parieur):Observable<Parieur>{
-    console.log(Parieur);
-    return this.http.post<Parieur>(this.host+"/addParieur",parieur);
-    
-  }
+  addParieur(newParieur:Parieur){
+    //console.warn(JSON.stringify(newAdmin));
+    const headers = { 'content-type': 'application/json'}  
+    const body=JSON.stringify(newParieur);
+    return  this.http.post<any>('http://127.0.0.1:8033/spring/api/parieur',body,{'headers':headers}).subscribe(data => {
+     data.id;
+     
+ });
  
  
+  }
 }
-
-

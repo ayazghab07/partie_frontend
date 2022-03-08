@@ -22,7 +22,7 @@ export class AdminServiceService {
     //console.warn(JSON.stringify(newAdmin));
     const headers = { 'content-type': 'application/json'}  
     const body=JSON.stringify(newAdmin);
-    return  this.http.post<any>('http://127.0.0.1:8092/spring/api/addadmin',body,{'headers':headers}).subscribe(data => {
+    return  this.http.post<any>('http://127.0.0.1:8033/spring/api/admin',body,{'headers':headers}).subscribe(data => {
      data.id;
      
  });
