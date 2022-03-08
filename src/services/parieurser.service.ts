@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ParieurserService {
-  host="http://127.0.0.1:8092"
+  host="http://127.0.0.1:8091"
 
   constructor(private http: HttpClient) { }
 

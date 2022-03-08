@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ListeparieurComponent } from './listeparieur.component';
+import { ParieursComponent } from './parieurs.component';
 
-describe('ListeparieurComponent', () => {
-  let component: ListeparieurComponent;
-  let fixture: ComponentFixture<ListeparieurComponent>;
+describe('ParieursComponent', () => {
+  let component: ParieursComponent;
+  let fixture: ComponentFixture<ParieursComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ListeparieurComponent ]
+      declarations: [ ParieursComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ListeparieurComponent);
+    fixture = TestBed.createComponent(ParieursComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

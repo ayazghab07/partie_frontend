@@ -4,26 +4,26 @@
     <div class="w3-col m5">
     
     <div class="w3-col m7">
-      <form  (ngSubmit)='onSubmit(f)' #f="ngForm" class="w3-container w3-card-4 w3-padding-16 w3-white" >
+      <form  (ngSubmit)='onSubmit(f)' #f="ngForm" ngNativeValidate class="w3-container w3-card-4 w3-padding-16 w3-white" >
       <div class="w3-section">      
         <label for="inputprenom">Prénom</label>
-        <input class="w3-input" type="text"  [(ngModel)]="nouvadmin.prenom" name="Name" id="inputprenom">
+        <input class="w3-input" type="text"  [(ngModel)]="nouvadmin.prenom"  #prenom="ngModel" name="Name" id="inputprenom" required>
       </div>
       <div class="w3-section">      
         <label for="inputnom">Nom</label>
-        <input class="w3-input" type="text" [(ngModel)]="nouvadmin.nom"   name="Email" id="inputnom" >
+        <input class="w3-input" type="text" [(ngModel)]="nouvadmin.nom"  #nom="ngModel" name="nom" id="inputnom" required>
       </div>
       <div class="w3-section">      
         <label for="inputtel">Télephone</label>
-        <input class="w3-input" type="text" [(ngModel)]="nouvadmin.tel" name="tel" id="inputtel"required>
+        <input class="w3-input" type="text" [(ngModel)]="nouvadmin.tel" #tel="ngModel" name="tel" id="inputtel"required>
       </div>
       <div class="w3-section">      
         <label for="inputemail"> Email</label>
-        <input class="w3-input" type="text" [(ngModel)]="nouvadmin.email" name="Message" id="inputemail">
+        <input class="w3-input" type="text" [(ngModel)]="nouvadmin.email"  #email="ngModel" name="Message" id="inputemail" required >
       </div> 
       <div class="w3-section">      
           <label for="inputpasword">Mot passe</label>
-          <input class="w3-input" type="password" name="Message"  [(ngModel)]="nouvadmin.password" id="inputpasword">
+          <input class="w3-input" type="password" name="Message"  [(ngModel)]="nouvadmin.password" #password="ngModel" id="inputpasword" required >
         </div>  
       <label>J'accepte d'être contacté(e) en cas de gains, de bénéficier d'offres personnalisées et de recevoir les informations de la part de FDJ.</label>
 <br>

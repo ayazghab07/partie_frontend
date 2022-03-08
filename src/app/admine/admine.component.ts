@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -10,24 +11,28 @@ import { AdminServiceService } from 'src/services/admin-service.service';
   styleUrls: ['./admine.component.css']
 })
 export class AdmineComponent implements OnInit {
-  nouvadmin=new Admin();
-
-  constructor(private serviceadmin:AdminServiceService,
-    private route:Router) { }
-
-  ngOnInit(): void {
-  }
-  onSubmit(form: NgForm){
-    this.serviceadmin.addAdmin(this.nouvadmin).subscribe(data=>{
-      
+  nouvadmin = new Admin();
+  message: string | undefined;
+   constructor(private httpClient:HttpClient,private adminService: AdminServiceService,private router:Router) { }
+   confirmationString:String ="New admin has been added";  
+    isAdded:boolean=false;
+   ngOnInit(): void {
+   }
+  
+       onSubmit(f: NgForm) {
+         
+         console.log(this.nouvadmin);
  
-      //this.route.navigate(['/addadmin']);
-     
-    })
+     this.adminService.addAdmin(this.nouvadmin);  
+    // document.write("l admin est ajouté"); 
+    
+    window.alert("L admin est ajouté !");
+ this.router.navigate(['parieurs']);
+    isAdded:true;
  
-   
-  }
-
+        
+        }
+       
 }
 
 

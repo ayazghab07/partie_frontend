@@ -9,7 +9,8 @@ import { FooterComponent } from './footer/footer.component';
 import { CompteComponent } from './compte/compte.component';
 import { AjouterComponent } from './ajouter/ajouter.component';
 import { AdmineComponent } from './admine/admine.component';
-import { ListeparieurComponent } from './listeparieur/listeparieur.component';
+import { ParieursComponent } from './parieurs/parieurs.component';
+
 
 
 @NgModule({
@@ -20,7 +21,7 @@ import { ListeparieurComponent } from './listeparieur/listeparieur.component';
     CompteComponent,
     AjouterComponent,
     AdmineComponent,
-    ListeparieurComponent
+    ParieursComponent
   ],
   imports: [
     BrowserModule,
