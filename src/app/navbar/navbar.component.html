@@ -1,52 +1,36 @@
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<!-- Sidebar on click -->
-<nav class="w3-sidebar w3-bar-block w3-white w3-card w3-animate-left w3-xxlarge" style="display:none;z-index:2" id="mySidebar">
-  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-display-topright w3-text-teal">Close
-    <i class="fa fa-remove"></i>
-  </a>
-  <a href="#" class="w3-bar-item w3-button"><img  class="imag">FootBall</a>
-  <a href="#" class="w3-bar-item w3-button">HandBall</a>
-  <a href="#" class="w3-bar-item w3-button">Tennis</a>
-  <a href="#" class="w3-bar-item w3-button">BasketBall</a>
-  <a href="#" class="w3-bar-item w3-button">RugBy</a>
-</nav>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-<!-- Navbar -->
-<div class="w3-top">
- <div class="w3-bar w3-theme-d2 w3-left-align">
-  <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
-  <a href="#" class="w3-bar-item w3-button w3-teal"><i  class="fa fa-home w3-margin-right"></i>PARI SPORTIFS</a>
-  <a href="#work" class="w3-bar-item w3-button w3-hide-small w3-hover-white">LIVE</a>
-  <a href="#pricing" class="w3-bar-item w3-button w3-hide-small w3-hover-white">CALANDRIER</a>
- 
-    <div class="w3-dropdown-hover w3-hide-small">
-    <button class="w3-button" title="Notifications">SPORTS <i class="fa fa-caret-down"></i></button>     
-    <div class="w3-dropdown-content w3-card-4 w3-bar-block">
-      <a href="#" class="w3-bar-item w3-button">FootBall</a>
-      <a href="#" class="w3-bar-item w3-button">HandBall</a>
-      <a href="#" class="w3-bar-item w3-button">Tennis</a>
-      <a href="#" class="w3-bar-item w3-button">BasketBall</a>
-      <a href="#" class="w3-bar-item w3-button">RUGBy</a>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">PariSprotif</a>
     </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">live </a></li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">calendrier <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Page 1-1</a></li>
+          <li><a href="#">Page 1-2</a></li>
+          <li><a href="#">Page 1-3</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Sports</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a routerLink="se_connecter"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a routerLink="s_inscrire"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
   </div>
-  <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" title="Search"><i class="fa fa-search"></i></a>
-  <a routerLink="se_connecter" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" ><img  class="imag"src="../../assets/images/unnamed.jpg">Se connecter </a>
-  <a routerLink="s_inscrire" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" ><img  class="imag"src="../../assets/images/icon.png">S'inscrire</a>
-
+</nav>
+  
+<div class="container">
+  <h3>Paris sportif en ligne</h3>
+  <p></p>
 </div>
 
-  <!-- Navbar on small screens -->
-  <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
-    <a href="#team" class="w3-bar-item w3-button">Team</a>
-    <a href="#work" class="w3-bar-item w3-button">Work</a>
-    <a href="#pricing" class="w3-bar-item w3-button">Price</a>
-    <a href="#contact" class="w3-bar-item w3-button">Contact</a>
-    <a href="#" class="w3-bar-item w3-button">Search</a>
-  </div>
-</div>
 <div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:1000px"></div>
 <router-outlet></router-outlet>

@@ -4,25 +4,38 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <form  action="/action_page.php" class="w3-container w3-card-4 w3-light-grey w3-text-blue w3-margin form-horizontal" >
-    <h2 class="w3-center"> Connexion</h2>
-     
-    
-    <div class="w3-row w3-section">
-      <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-envelope-o"></i></div>
-        <div class="w3-rest">
-          <input class="w3-input w3-border" name="email" type="text" placeholder="Email">
+    <div class="col-md-4">
+      <div class="wrapper"   *ngIf="erreur==1">
+      <div class="typing-demo">login ou mot de passe erroné..</div>
+
+      </div>
+      </div>
+  <div class="login-box">
+      <h2>Login</h2>
+      <form #f="ngForm" (ngSubmit)="onSubmit(f)" ngNativeValidate >
+        <div class="user-box">
+          <input type="email" name="email" [(ngModel)]="parieur.email" required >
+          <label>email</label>
         </div>
+        <div class="user-box">
+          <input type="password" name="password" [(ngModel)]="parieur.password"  required>
+          <label>Password</label>
+        </div>
+        <button type="submit"
+  >
+  <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+  Connexion
+</button>
+        <!-- <a href="#">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          Submit
+        </a> -->
+      </form>
     </div>
     
-    <div class="w3-row w3-section">
-      <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-pencil"></i></div>
-        <div class="w3-rest">
-          <input class="w3-input w3-border" name="Mot passe" type="text" placeholder="Mot passe">
-        </div>
-    </div>
-  </form>
-    <p class="w3-center">
-    <button class="w3-button w3-section w3-blue w3-ripple"> Se Connecter </button>
-    </p>
-    <p class="w3-center"> <a routerLink="s_inscrire">créer un compte</a></p>
-    <router-outlet></router-outlet>
